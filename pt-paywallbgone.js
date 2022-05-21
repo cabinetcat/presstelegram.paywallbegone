@@ -2,16 +2,15 @@
 // @name         Press Telegram Paywall-be-gone!
 // @namespace    http://tampermonkey.net/
 // @version      1.0.0
-// @require http://code.jquery.com/jquery-latest.js
 // @description  removes the article paywall from presstelegram.com
-// @author        xsesupremebanana
+// @author       xsesupremebanana
 // @match        *://www.presstelegram.com/*
 // @grant        none
 // ==/UserScript==
 
 (function() {
     'use strict';
-    var body = $('.article-body').html()
+    const body = document.querySelectorAll('.article-body')
     console.log("wait script")
     window.setInterval(function(){
         try{
@@ -19,8 +18,8 @@
             document.querySelector('#ConneXt_Action_Id-115155').remove();
             document.querySelector('.connext-modal-backdrop').remove();
             document.querySelector('.article-body').remove();
-            document.querySelector('.article-content-wrapper').append($.parseHTML(body)[0]);
-            $("body").css('overflow', 'auto');
+            document.querySelector('.article-content-wrapper').appendChild(body[0]);
+            document.querySelector("body").style.overflow = 'auto';
             console.log("done script")
         }catch(e){
         }
