@@ -1,4 +1,4 @@
-# presstelegram.paywallbegone
+# presstelegram.paywallyeet
 Removes the article paywall for [presstelegram.com](presstelegram.com)
 
 Usage
