@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Press Telegram Paywall-be-gone!
+// @name         Press Telegram Paywall-Yeet
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0
 // @description  removes the article paywall from presstelegram.com
 // @author       xsesupremebanana
 // @match        *://www.presstelegram.com/*
