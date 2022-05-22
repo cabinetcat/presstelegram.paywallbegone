@@ -1,0 +1,35 @@
+// ==UserScript==
+// @name         Press Telegram Paywall-Yeet
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  removes the article paywall from presstelegram.com
+// @author       xsesupremebanana
+// @match        *://www.presstelegram.com/*
+// @grant        none
+// ==/UserScript==
+(function() {
+    'use strict';
+    var t = document.createElement('div');
+    t.innerHTML = document.querySelectorAll('.article-body')[0].innerHTML;
+    console.log("wait script");
+    var done = false;
+    window.setInterval(function(){
+        //if (done == false)
+        //{
+            try{
+                document.querySelectorAll('.fade').forEach(e => e.remove());
+                document.querySelector('.article-body').remove();
+                document.querySelector('.article-content-wrapper').appendChild(t);
+                document.querySelector("body").style.overflow = 'auto';
+                document.querySelector('.modal-scrollable').style.position='initial';
+                console.log("done script");
+                done = true;
+
+            }catch(e)
+            {
+                console.log(e);
+            }
+       // }
+
+    }, 1000);
+})();
